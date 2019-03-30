@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+      
+         {% for b in result %}
+            <tr>
+               <th> {{ b[3] }} </th>
+               <th> {{ b[4] }} </th>
+               {% for t in b[-1] %}
+                       <form action ="http://localhost:5000/confirm" method = "POST">
+                       <td><input type="submit" name="{{ b[1] }}" value="{{ t }}"></td>
+                       </form>  
+               {% endfor %} 
+            </tr>
+         {% endfor %}
+     
+      </table>
+   </body>
+</html>
+
